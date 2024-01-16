@@ -1,7 +1,6 @@
 
 # Recipe App
-
-This repository contains a simple Express.js application for managing recipes. It uses MongoDB as a database to store and retrieve recipe data. Below is a guide on setting up and running the application.
+Within this repository, you'll find a straightforward Express.js application designed for recipe management, utilizing MongoDB as its database for storing and fetching recipe data. The following guide provides instructions on configuring and running the application.
 
 # Prerequisites
 
@@ -11,10 +10,10 @@ MongoDB: Ensure that you have MongoDB installed locally. You can download it [he
 
 # Getting Started
 1-Clone the repository to your local machine:   
-`git clone https://github.com/your-username/recipe-app.git`
+`git clone https://github.com/oumaima-ezarouali/recipe-projectExpress.git`
 
 2-Navigate to the project directory: 
-`cd recipe-app` 
+`cd recipe-api` 
 
 3-Install the dependencies : `npm install`
 
@@ -26,16 +25,16 @@ MongoDB: Ensure that you have MongoDB installed locally. You can download it [he
 # Running the Application
 
 1-Start the Express server:
- `node index.js`
- The server will run on http://localhost:3008  by default.
+ `nodemon index.js`
+ The server will run on http://localhost:4000 by default.
 
-2-Use your preferred API testing tool (e.g., Postman, Insomnia) or a web browser to interact with the API.
+2-Use your preferred API testing tool like postman or a web browser to interact with the API.
 
 # API Endpoints
 
 GET /all: Retrieve all recipes.
 
-POST /add: Add a new recipe. Send a JSON object with the recipe details in the request body.
+POST /create: Create a new recipe. Send a JSON object with the recipe details in the request body.
 
 PUT /update/:id: Update a recipe by ID. Provide the recipe ID in the URL and send the updated details in the request body.
 
@@ -44,33 +43,29 @@ DELETE /delete/:id: Delete a recipe by ID. Provide the recipe ID in the URL.
 # Example Requests
 ## Adding a Recipe :
 ````
-POST http://localhost:3008/add  
+POST http://localhost:4000/api/recipes/upload
 Content-Type: application/json
 
 {
-  "title": "Delicious Pasta",  
-  "description": "A tasty pasta dish",  
-  "imageUrl": "https://example.com/pasta.jpg",  
-  "rating": 4,  
-  "category": "Main Dish",  
+  "name": "Delicious Pasta",  
+  "category": "Italien",  
   "ingredients": ["Pasta", "Tomato Sauce", "Cheese"],  
   "instructions": ["Boil pasta", "Mix with sauce", "Top with cheese"],   
-  "equipments": ["Pot", "Pan"]   
+   "imageUrl": "https://example.com/pasta.jpg",
 }
 ````
 
 # Updating a Recipe
 ````
-PUT http://localhost:3008/update/recipe-id
+PUT http://localhost:4000/api/recipes/id
 Content-Type: application/json
 
 {
-  "rating": 5,
   "instructions": ["Boil pasta", "Mix with sauce", "Top with cheese and bake"]
 }
 ````
 # Deleting a Recipe
-`DELETE http://localhost:3008/delete/recipe-id
+`DELETE http://localhost:4000/api/recipes/id
 `
 
 # Contributing
